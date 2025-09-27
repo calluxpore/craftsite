@@ -77,78 +77,6 @@ function hideSection(section) {
 /**
  * Initialize Show More functionality for events
  */
-function initializeShowMore() {
-    let visibleCards = 4;
-    const totalCards = 12;
-    const showMoreBtn = document.getElementById('show-more-btn');
-    const showMoreText = document.getElementById('show-more-text');
-    const showMoreIcon = document.getElementById('show-more-icon');
-    
-    if (!showMoreBtn) return;
-    
-    showMoreBtn.addEventListener('click', function() {
-        const eventItems = document.querySelectorAll('.event-item');
-        
-        if (visibleCards < totalCards) {
-            // Show next 4 cards
-            const endIndex = Math.min(visibleCards + 4, totalCards);
-            
-            for (let i = visibleCards; i < endIndex; i++) {
-                if (eventItems[i]) {
-                    eventItems[i].classList.remove('hidden');
-                    // Add staggered animation
-                    setTimeout(() => {
-                        eventItems[i].style.opacity = '0';
-                        eventItems[i].style.transform = 'translateY(20px)';
-                        eventItems[i].style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-                        
-                        setTimeout(() => {
-                            eventItems[i].style.opacity = '1';
-                            eventItems[i].style.transform = 'translateY(0)';
-                        }, 50);
-                    }, (i - visibleCards) * 100);
-                }
-            }
-            
-            visibleCards = endIndex;
-            
-            // Update button text
-            if (visibleCards >= totalCards) {
-                showMoreText.textContent = 'Show Less';
-                showMoreIcon.style.transform = 'rotate(180deg)';
-            } else {
-                showMoreText.textContent = 'Show More';
-            }
-        } else {
-            // Hide cards beyond first 4
-            for (let i = 4; i < totalCards; i++) {
-                if (eventItems[i]) {
-                    eventItems[i].style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-                    eventItems[i].style.opacity = '0';
-                    eventItems[i].style.transform = 'translateY(-20px)';
-                    
-                    setTimeout(() => {
-                        eventItems[i].classList.add('hidden');
-                        eventItems[i].style.opacity = '';
-                        eventItems[i].style.transform = '';
-                        eventItems[i].style.transition = '';
-                    }, 300);
-                }
-            }
-            
-            visibleCards = 4;
-            showMoreText.textContent = 'Show More';
-            showMoreIcon.style.transform = 'rotate(0deg)';
-            
-            // Smooth scroll to events section
-            document.getElementById('events-section').scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start' 
-            });
-        }
-    });
-}
-
 /**
  * Initialize Show More functionality for events
  */
@@ -157,6 +85,11 @@ function initializeShowMore() {
     const showMoreText = document.getElementById('show-more-text');
     const showMoreIcon = document.getElementById('show-more-icon');
     const eventItems = document.querySelectorAll('.event-item');
+    
+    // Exit if button doesn't exist
+    if (!showMoreBtn || !showMoreText || !showMoreIcon || eventItems.length === 0) {
+        return;
+    }
     
     let currentlyShowing = 4; // Initially showing first 4 events
     let isExpanded = false;
