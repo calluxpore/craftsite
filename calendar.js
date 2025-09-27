@@ -251,7 +251,7 @@ function showEventModal(dayEvents, day, month, year) {
     let content = '';
     dayEvents.forEach(event => {
         content += `
-            <div class="mb-4 p-4 border border-gray-200 rounded-xl">
+            <div class="mb-4 p-4 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
                 <div class="flex items-center mb-3">
                     <img src="${event.image}" alt="${event.title}" class="w-12 h-12 rounded-lg object-cover mr-3">
                     <div>
@@ -277,7 +277,7 @@ function displayEventsList() {
     sortedEvents.forEach(event => {
         const eventDate = new Date(event.date);
         const eventElement = document.createElement('div');
-        eventElement.className = 'flex items-center p-3 rounded-xl border border-gray-200 hover:border-terracotta/30 hover:bg-terracotta/5 transition-all duration-200 cursor-pointer';
+        eventElement.className = 'flex items-center p-3 rounded-xl border border-gray-200 hover:border-terracotta/30 hover:bg-terracotta/5 transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md';
         
         eventElement.innerHTML = `
             <div class="w-3 h-3 bg-terracotta rounded-full mr-3"></div>
