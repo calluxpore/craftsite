@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeAnimations();
     initializeMobileMenu();
     initializeShowMore();
+    initializeViewAll();
     initializeCalendarButton();
 });
 
@@ -565,6 +566,87 @@ function initializeCalendarButton() {
     }
 }
 
+/**
+ * Initialize View All functionality for events
+ */
+function initializeViewAll() {
+    const viewAllBtn = document.getElementById('view-all-events-btn');
+    
+    if (!viewAllBtn) return;
+    
+    viewAllBtn.addEventListener('click', function() {
+        const eventItems = document.querySelectorAll('.event-item');
+        let allVisible = true;
+        
+        // Check if all events are currently visible
+        eventItems.forEach(item => {
+            if (item.classList.contains('hidden')) {
+                allVisible = false;
+            }
+        });
+        
+        if (!allVisible) {
+            // Show all events with staggered animation
+            eventItems.forEach((item, index) => {
+                if (item.classList.contains('hidden')) {
+                    item.classList.remove('hidden');
+                    
+                    // Add staggered animation
+                    setTimeout(() => {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                        
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 50);
+                    }, index * 80); // Staggered timing
+                }
+            });
+            
+            // Update button text
+            viewAllBtn.textContent = 'Show Less ↑';
+            
+            // Update show more button if it exists
+            const showMoreBtn = document.getElementById('show-more-btn');
+            const showMoreText = document.getElementById('show-more-text');
+            const showMoreIcon = document.getElementById('show-more-icon');
+            
+            if (showMoreBtn && showMoreText && showMoreIcon) {
+                showMoreText.textContent = 'Show Less';
+                showMoreIcon.style.transform = 'rotate(180deg)';
+            }
+        } else {
+            // Hide events beyond first 4 with instant clean transition
+            eventItems.forEach((item, index) => {
+                if (index >= 4) {
+                    item.classList.add('hidden');
+                }
+            });
+            
+            // Update button text
+            viewAllBtn.textContent = 'View All →';
+            
+            // Update show more button if it exists
+            const showMoreBtn = document.getElementById('show-more-btn');
+            const showMoreText = document.getElementById('show-more-text');
+            const showMoreIcon = document.getElementById('show-more-icon');
+            
+            if (showMoreBtn && showMoreText && showMoreIcon) {
+                showMoreText.textContent = 'Show More';
+                showMoreIcon.style.transform = 'rotate(0deg)';
+            }
+            
+            // Smooth scroll to events section
+            document.getElementById('events-section').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start' 
+            });
+        }
+    });
+}
+
 // Export functions for potential external use
 window.ArtisanConnect = {
     switchToTab,
@@ -572,5 +654,6 @@ window.ArtisanConnect = {
     validateForm,
     UserPreferences,
     trackEvent,
-    initializeCalendarButton
+    initializeCalendarButton,
+    initializeViewAll
 };
