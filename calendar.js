@@ -1,5 +1,31 @@
 // Calendar JavaScript for ArtisanConnect
 
+// Event page mapping
+const eventPageMapping = {
+    "Pottery Workshop": "pottery-workshop.html",
+    "Textile Weaving": "textile-weaving.html", 
+    "Metal Crafting": "metal-crafting.html",
+    "Lamp Making": "lamp-making.html",
+    "Block Printing": "block-printing.html",
+    "Jewelry Making": "jewelry-making.html",
+    "Madhubani Painting": "madhubani-painting.html",
+    "Wood Carving": "wood-carving.html",
+    "Silk Weaving": "silk-weaving.html",
+    "Blue Pottery": "blue-pottery.html",
+    "Carpet Weaving": "carpet-weaving.html",
+    "Puppet Making": "puppet-making.html"
+};
+
+// Function to navigate to event page
+function navigateToEventPage(eventTitle) {
+    const eventPage = eventPageMapping[eventTitle];
+    if (eventPage) {
+        window.location.href = eventPage;
+    } else {
+        console.error('Event page not found for:', eventTitle);
+    }
+}
+
 // Events data with dates
 const events = [
     {
@@ -140,17 +166,6 @@ function setupEventListeners() {
         }
         displayCalendar(currentMonth, currentYear);
     });
-
-    document.getElementById('close-modal').addEventListener('click', function() {
-        document.getElementById('event-modal').classList.add('hidden');
-    });
-
-    // Close modal when clicking outside
-    document.getElementById('event-modal').addEventListener('click', function(e) {
-        if (e.target === this) {
-            this.classList.add('hidden');
-        }
-    });
 }
 
 function displayCalendar(month, year) {
@@ -231,9 +246,16 @@ function displayCalendar(month, year) {
                 dayElement.appendChild(eventDot);
             }
             
-            // Add click handler to show event details
+            // Add click handler to navigate to event page
             dayElement.addEventListener('click', function() {
-                showEventModal(dayEvents, day, month, year);
+                if (dayEvents.length === 1) {
+                    // Single event - navigate directly
+                    navigateToEventPage(dayEvents[0].title);
+                } else if (dayEvents.length > 1) {
+                    // Multiple events - for now navigate to first event
+                    // You could show a small dropdown or list in the future
+                    navigateToEventPage(dayEvents[0].title);
+                }
             });
         }
         
@@ -241,32 +263,7 @@ function displayCalendar(month, year) {
     }
 }
 
-function showEventModal(dayEvents, day, month, year) {
-    const modal = document.getElementById('event-modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalContent = document.getElementById('modal-content');
-    
-    modalTitle.textContent = `Events on ${months[month]} ${day}, ${year}`;
-    
-    let content = '';
-    dayEvents.forEach(event => {
-        content += `
-            <div class="mb-4 p-4 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
-                <div class="flex items-center mb-3">
-                    <img src="${event.image}" alt="${event.title}" class="w-12 h-12 rounded-lg object-cover mr-3">
-                    <div>
-                        <h4 class="font-semibold text-gray-900">${event.title}</h4>
-                        <p class="text-sm text-gray-600">${event.location}</p>
-                    </div>
-                </div>
-                <p class="text-gray-700 text-sm">${event.description}</p>
-            </div>
-        `;
-    });
-    
-    modalContent.innerHTML = content;
-    modal.classList.remove('hidden');
-}
+// Modal functionality removed - now navigating directly to event pages
 
 function displayEventsList() {
     const eventsList = document.getElementById('events-list');
@@ -293,7 +290,7 @@ function displayEventsList() {
         `;
         
         eventElement.addEventListener('click', function() {
-            showEventModal([event], eventDate.getDate(), eventDate.getMonth(), eventDate.getFullYear());
+            navigateToEventPage(event.title);
         });
         
         eventsList.appendChild(eventElement);
