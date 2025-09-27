@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtisanConnect - Discover the Art of India</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'terracotta': '#D8734B',
+                        'off-white': '#FEFEFE',
+                        'neutral-50': '#FAFAFA',
+                        'neutral-900': '#0A0A0A'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-off-white text-neutral-900 antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md border-b border-gray-100 z-50">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-bold text-neutral-900">
+                        Artisan<span class="text-terracotta">Connect</span>
+                    </h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-2">
+                    <button id="events-tab" class="nav-button px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300">
+                        Events
+                    </button>
+                    <button id="jobs-tab" class="nav-button px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300">
+                        Jobs
+                    </button>
+                    <button id="nav-calendar-btn" class="nav-button px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300">
+                        Calendar
+                    </button>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="mobile-menu-btn p-2 rounded-md hover:bg-gray-100 transition-colors duration-200">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 md:pt-24 pb-16 md:pb-20">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="space-y-6 md:space-y-8">
+                    <div class="inline-flex items-center px-4 py-2 bg-terracotta/10 rounded-full text-sm font-medium text-terracotta border border-terracotta/20">
+                        <span class="w-2 h-2 bg-terracotta rounded-full mr-2 animate-pulse"></span>
+                        Events • Jobs • Opportunities
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                        Your Journey into<br>
+                        <span class="text-terracotta">Indian Handicrafts Begins Here</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
+                        Discover amazing events, workshops, training programs, and career opportunities. Connect with master artisans and shape your passion into a profession.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-start gap-4 pt-4">
+                        <button id="explore-events-btn" class="w-full sm:w-auto px-8 py-4 border-2 border-gray-200 rounded-2xl hover:border-gray-300 transition-all duration-300 font-medium">
+                            Explore Events
+                        </button>
+                        <button id="calendar-btn" class="w-full sm:w-auto px-8 py-4 border-2 border-gray-200 rounded-2xl hover:border-gray-300 transition-all duration-300 font-medium">
+                            Calendar
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="relative">
+                    <div class="hero-image-container relative overflow-hidden rounded-3xl shadow-2xl">
+                        <img src="assets/hero image.png" alt="Indian Artisan at Work" class="w-full h-auto object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 lg:px-8 py-16">
+        <!-- Events Section -->
+        <section id="events-section" class="content-section">
+            <div class="flex items-center justify-between mb-12">
+                <h3 class="text-2xl md:text-3xl font-bold text-neutral-900">Upcoming Events</h3>
+                <button class="text-sm text-gray-500 hover:text-neutral-900 transition-colors duration-200 font-medium">View All →</button>
+            </div>
+            
+            <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Event Card 1 -->
+                <div class="event-card event-item group cursor-pointer" data-index="0">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <img src="assets/pottery.png" alt="Pottery Workshop" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Pottery Workshop</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="font-medium">October 15, 2025</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                <span>Jaipur, Rajasthan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="event-card event-item group cursor-pointer" data-index="1">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <img src="assets/textile weaving.png" alt="Textile Weaving" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Textile Weaving</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="font-medium">October 22, 2025</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 616 0z"></path>
+                                </svg>
+                                <span>Varanasi, Uttar Pradesh</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 -->
+                <div class="event-card event-item group cursor-pointer" data-index="2">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <img src="assets/metal crafting.png" alt="Metal Crafting" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Metal Crafting</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="font-medium">November 5, 2025</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 616 0z"></path>
+                                </svg>
+                                <span>Moradabad, Uttar Pradesh</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 4 -->
+                <div class="event-card event-item group cursor-pointer" data-index="3">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <img src="assets/lamp making.png" alt="Lamp Making" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Lamp Making</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="font-medium">November 12, 2025</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 616 0z"></path>
+                                </svg>
+                                <span>Dibrugarh, Assam</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 5 -->
+                <div class="event-card event-item group cursor-pointer hidden" data-index="4">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <img src="assets/block printing.png" alt="Block Printing" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Block Printing</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="font-medium">November 20, 2025</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 616 0z"></path>
+                                </svg>
+                                <span>Kolkata, West Bengal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 6 -->
+                <div class="event-card event-item group cursor-pointer hidden" data-index="5">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <img src="assets/jewelry making.png" alt="Jewelry Making" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Jewelry Making</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="font-medium">November 28, 2025</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 616 0z"></path>
+                                </svg>
+                                <span>Chennai, Tamil Nadu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 7 -->
+                <div class="event-card event-item group cursor-pointer hidden" data-index="6">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <img src="assets/madhubani art.png" alt="Madhubani Painting" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Madhubani Painting</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="font-medium">December 8, 2025</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 616 0z"></path>
+                                </svg>
+                                <span>Madhubani, Bihar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 8 -->
+                <div class="event-card event-item group cursor-pointer hidden" data-index="7">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <img src="assets/wood carving.png" alt="Wood Carving" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Wood Carving</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="font-medium">December 15, 2025</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 616 0z"></path>
+                                </svg>
+                                <span>Guwahati, Assam</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 9 -->
+                <div class="event-card event-item group cursor-pointer hidden" data-index="8">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <img src="assets/silk weaving.png" alt="Silk Weaving" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Silk Weaving</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="font-medium">December 22, 2025</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 616 0z"></path>
+                                </svg>
+                                <span>Lucknow, Uttar Pradesh</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 10 -->
+                <div class="event-card event-item group cursor-pointer hidden" data-index="9">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <img src="assets/blue pottery.png" alt="Blue Pottery" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Blue Pottery</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="font-medium">December 30, 2025</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 616 0z"></path>
+                                </svg>
+                                <span>Jaipur, Rajasthan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 11 -->
+                <div class="event-card event-item group cursor-pointer hidden" data-index="10">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <img src="assets/carpet weaving.png" alt="Carpet Weaving" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Carpet Weaving</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="font-medium">January 5, 2026</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 616 0z"></path>
+                                </svg>
+                                <span>Srinagar, Kashmir</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 12 -->
+                <div class="event-card event-item group cursor-pointer hidden" data-index="11">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <img src="assets/puppet making.png" alt="Puppet Making" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Puppet Making</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="font-medium">January 12, 2026</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 616 0z"></path>
+                                </svg>
+                                <span>Udaipur, Rajasthan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Show More Button -->
+            <div class="text-center mt-8">
+                <button id="show-more-btn" class="inline-flex items-center text-sm text-gray-600 hover:text-neutral-900 transition-colors duration-200 group">
+                    <span id="show-more-text">Show More</span>
+                    <svg id="show-more-icon" class="w-4 h-4 ml-1 transition-transform duration-200 group-hover:translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Jobs Section -->
+        <section id="jobs-section" class="content-section hidden">
+            <div class="flex items-center justify-between mb-12">
+                <h3 class="text-2xl md:text-3xl font-bold text-neutral-900">Job Opportunities</h3>
+                <button class="text-sm text-gray-500 hover:text-neutral-900 transition-colors duration-200 font-medium">View All →</button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Job Card 1 -->
+                <div class="job-card group cursor-pointer bg-white rounded-2xl border border-gray-100 p-6 hover:border-gray-200 transition-all duration-300">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-12 h-12 bg-neutral-100 rounded-xl flex items-center justify-center group-hover:bg-terracotta group-hover:text-white transition-all duration-300">
+                            <span class="text-xl">👨‍🎨</span>
+                        </div>
+                        <span class="text-xs bg-green-50 text-green-700 px-3 py-1 rounded-full font-medium">Full-time</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-3 text-neutral-900">Master Craftsperson</h4>
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">Lead pottery workshops and train apprentices in traditional techniques</p>
+                    <div class="space-y-2 text-xs text-gray-500 mb-6">
+                        <div class="flex items-center">
+                            <span class="w-4 h-4 mr-2">🏢</span>
+                            <span>ArtisanConnect Studios</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-4 h-4 mr-2">📍</span>
+                            <span>Mumbai, Maharashtra</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-4 h-4 mr-2">💰</span>
+                            <span>₹4.5L - ₹6L/year</span>
+                        </div>
+                    </div>
+                    <button class="w-full bg-neutral-900 text-white py-3 rounded-xl hover:bg-neutral-800 transition-colors duration-200 text-sm font-medium">
+                        Apply Now
+                    </button>
+                </div>
+
+                <!-- Job Card 2 -->
+                <div class="job-card group cursor-pointer bg-white rounded-2xl border border-gray-100 p-6 hover:border-gray-200 transition-all duration-300">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-12 h-12 bg-neutral-100 rounded-xl flex items-center justify-center group-hover:bg-terracotta group-hover:text-white transition-all duration-300">
+                            <span class="text-xl">🎯</span>
+                        </div>
+                        <span class="text-xs bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-medium">Part-time</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-3 text-neutral-900">Workshop Coordinator</h4>
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">Organize and coordinate artisan workshops across different cities</p>
+                    <div class="space-y-2 text-xs text-gray-500 mb-6">
+                        <div class="flex items-center">
+                            <span class="w-4 h-4 mr-2">🏢</span>
+                            <span>ArtisanConnect</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-4 h-4 mr-2">📍</span>
+                            <span>Delhi, National Capital Territory</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-4 h-4 mr-2">💰</span>
+                            <span>₹3L - ₹4.5L/year</span>
+                        </div>
+                    </div>
+                    <button class="w-full bg-neutral-900 text-white py-3 rounded-xl hover:bg-neutral-800 transition-colors duration-200 text-sm font-medium">
+                        Apply Now
+                    </button>
+                </div>
+
+                <!-- Job Card 3 -->
+                <div class="job-card group cursor-pointer bg-white rounded-2xl border border-gray-100 p-6 hover:border-gray-200 transition-all duration-300">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-12 h-12 bg-neutral-100 rounded-xl flex items-center justify-center group-hover:bg-terracotta group-hover:text-white transition-all duration-300">
+                            <span class="text-xl">📸</span>
+                        </div>
+                        <span class="text-xs bg-purple-50 text-purple-700 px-3 py-1 rounded-full font-medium">Contract</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-3 text-neutral-900">Content Creator</h4>
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">Document artisan stories and create engaging content for social media</p>
+                    <div class="space-y-2 text-xs text-gray-500 mb-6">
+                        <div class="flex items-center">
+                            <span class="w-4 h-4 mr-2">🏢</span>
+                            <span>ArtisanConnect Media</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-4 h-4 mr-2">📍</span>
+                            <span>Bangalore, Karnataka</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-4 h-4 mr-2">💰</span>
+                            <span>₹25K - ₹40K/project</span>
+                        </div>
+                    </div>
+                    <button class="w-full bg-neutral-900 text-white py-3 rounded-xl hover:bg-neutral-800 transition-colors duration-200 text-sm font-medium">
+                        Apply Now
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100 py-16">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Logo & Description -->
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4 text-neutral-900">
+                        Artisan<span class="text-terracotta">Connect</span>
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed max-w-md">
+                        Bridging the gap between traditional Indian craftsmanship and modern opportunities. Connect with master artisans and preserve cultural heritage.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-terracotta hover:text-white transition-colors duration-200">
+                            <span class="text-sm">📘</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-terracotta hover:text-white transition-colors duration-200">
+                            <span class="text-sm">📷</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-terracotta hover:text-white transition-colors duration-200">
+                            <span class="text-sm">🐦</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-terracotta hover:text-white transition-colors duration-200">
+                            <span class="text-sm">💼</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-neutral-900">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-neutral-900 transition-colors duration-200">Events</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-neutral-900 transition-colors duration-200">Jobs</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-neutral-900 transition-colors duration-200">Artisans</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-neutral-900 transition-colors duration-200">Gallery</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-neutral-900 transition-colors duration-200">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-neutral-900">Contact</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>📧 hello@artisanconnect.in</li>
+                        <li>📞 +91 98765 43210</li>
+                        <li>📍 Mumbai, Maharashtra</li>
+                        <li>🕐 Mon-Fri, 9AM-6PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                        © 2025 ArtisanConnect. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-500 hover:text-neutral-900 transition-colors duration-200">Privacy Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-neutral-900 transition-colors duration-200">Terms of Service</a>
+                        <a href="#" class="text-gray-500 hover:text-neutral-900 transition-colors duration-200">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
