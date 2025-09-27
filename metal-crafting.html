@@ -3,17 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events Calendar - ArtisanConnect</title>
-    
+    <title>Metal Crafting Workshop - ArtisanConnect</title>
     <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Tailwind Config -->
     <script>
         tailwind.config = {
             theme: {
@@ -44,13 +40,11 @@
         }
     </script>
 </head>
-
 <body class="bg-neutral-50 text-neutral-900 antialiased font-sans">
     <!-- Navigation -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="index.html" class="block">
                         <h1 class="text-2xl font-bold text-neutral-900 hover:text-terracotta transition-colors duration-200 cursor-pointer">
@@ -58,109 +52,86 @@
                         </h1>
                     </a>
                 </div>
-
-                <!-- Desktop Navigation -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="index.html" class="text-neutral-600 hover:text-neutral-900 px-3 py-2 text-sm font-medium transition-colors duration-200">Home</a>
-                        <a href="calendar.html" class="text-neutral-900 border-b-2 border-terracotta px-3 py-2 text-sm font-medium">Calendar</a>
+                        <a href="calendar.html" class="text-neutral-600 hover:text-neutral-900 px-3 py-2 text-sm font-medium transition-colors duration-200">Calendar</a>
                         <a href="jobs.html" class="text-neutral-600 hover:text-neutral-900 px-3 py-2 text-sm font-medium transition-colors duration-200">Jobs</a>
                     </div>
-                </div>
-
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button type="button" class="bg-neutral-50 inline-flex items-center justify-center p-2 rounded-md text-neutral-400 hover:text-neutral-500 hover:bg-neutral-100">
-                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Calendar Section -->
-    <section class="pt-20 md:pt-24 pb-16 md:pb-20">
-        <div class="max-w-6xl mx-auto px-6 lg:px-8">
-            <!-- Header -->
-            <div class="text-center mb-12">
-                <h1 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">Events Calendar</h1>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    Discover when your favorite craft workshops are happening. Click on any date to see event details.
-                </p>
-            </div>
-
-            <!-- Calendar Navigation -->
-            <div class="flex items-center justify-between mb-8 bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                <button id="prev-month" class="p-2 rounded-xl hover:bg-gray-100 transition-colors duration-200">
-                    <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                    </svg>
-                </button>
-                <h2 id="current-month" class="text-xl md:text-2xl font-semibold text-neutral-900"></h2>
-                <button id="next-month" class="p-2 rounded-xl hover:bg-gray-100 transition-colors duration-200">
-                    <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Calendar Grid -->
-            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-                <!-- Days Header -->
-                <div class="grid grid-cols-7 bg-gray-50">
-                    <div class="p-4 text-center text-sm font-medium text-gray-600">Sun</div>
-                    <div class="p-4 text-center text-sm font-medium text-gray-600">Mon</div>
-                    <div class="p-4 text-center text-sm font-medium text-gray-600">Tue</div>
-                    <div class="p-4 text-center text-sm font-medium text-gray-600">Wed</div>
-                    <div class="p-4 text-center text-sm font-medium text-gray-600">Thu</div>
-                    <div class="p-4 text-center text-sm font-medium text-gray-600">Fri</div>
-                    <div class="p-4 text-center text-sm font-medium text-gray-600">Sat</div>
-                </div>
-                
-                <!-- Calendar Days -->
-                <div id="calendar-days" class="grid grid-cols-7">
-                    <!-- Days will be populated by JavaScript -->
-                </div>
-            </div>
-
-            <!-- Events Legend -->
-            <div class="mt-8 bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                <h3 class="text-lg font-semibold text-neutral-900 mb-4">Upcoming Events</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="events-list">
-                    <!-- Events will be populated by JavaScript -->
-                </div>
-            </div>
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Back Button -->
+        <div class="mb-6">
+            <a href="index.html" class="inline-flex items-center text-neutral-600 hover:text-terracotta transition-colors duration-200">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Back to Events
+            </a>
         </div>
-    </section>
 
-    <!-- Event Details Modal -->
-    <div id="event-modal" class="hidden fixed inset-0 z-50 overflow-y-auto">
-        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-            
-            <div class="inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                    <div class="sm:flex sm:items-start">
-                        <div class="mt-3 text-center sm:mt-0 sm:text-left w-full">
-                            <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4" id="modal-title"></h3>
-                            <div class="mt-2">
-                                <div id="modal-content"></div>
-                            </div>
+        <!-- Event Details Section -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div class="lg:flex">
+                <div class="lg:w-1/2">
+                    <img src="assets/metal crafting.png" alt="Metal Crafting Workshop" class="w-full h-96 lg:h-full object-cover">
+                </div>
+                <div class="lg:w-1/2 p-8 lg:p-12">
+                    <h1 class="text-3xl lg:text-4xl font-bold text-neutral-900 mb-6">Metal Crafting Workshop</h1>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <span class="text-terracotta font-semibold w-32">Organised by:</span>
+                            <span class="text-neutral-700">Master Craftsman Suresh Sharma</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-terracotta font-semibold w-32">Date:</span>
+                            <span class="text-neutral-700">February 5, 2025 - February 8, 2025</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-terracotta font-semibold w-32">Location:</span>
+                            <span class="text-neutral-700">Brass Craft Center, Moradabad, Uttar Pradesh</span>
                         </div>
                     </div>
-                </div>
-                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                    <button id="close-modal" class="w-full inline-flex justify-center rounded-xl border border-transparent shadow-sm px-4 py-2 bg-neutral-900 text-base font-medium text-white hover:bg-neutral-800 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm">
-                        Close
+                    <div class="mb-8">
+                        <p class="text-neutral-600 text-lg leading-relaxed">
+                            Learn the traditional art of metal crafting and create stunning brass and copper pieces. Master ancient techniques of hammering, engraving, and finishing used by skilled metalworkers for centuries.
+                        </p>
+                    </div>
+                    <button class="w-full bg-terracotta hover:bg-terracotta/90 text-white font-semibold py-4 px-8 rounded-xl transition-colors duration-200 text-lg">
+                        Register for Workshop
                     </button>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Footer -->
+        <!-- About Section -->
+        <div class="mt-12 bg-white rounded-2xl shadow-lg p-8 lg:p-12">
+            <h2 class="text-2xl lg:text-3xl font-bold text-neutral-900 mb-8">About the Event</h2>
+            <div class="prose prose-lg max-w-none">
+                <p class="text-neutral-700 mb-6">
+                    Discover the ancient art of metal crafting in this intensive 4-day workshop. Learn traditional techniques used to create beautiful brass and copper items, from decorative pieces to functional household items.
+                </p>
+                <h3 class="text-xl font-semibold text-neutral-900 mb-4">What You'll Learn</h3>
+                <ul class="text-neutral-700 mb-6 space-y-2">
+                    <li>• Metal sheet preparation and cutting techniques</li>
+                    <li>• Traditional hammering and shaping methods</li>
+                    <li>• Engraving and embossing techniques</li>
+                    <li>• Polishing and finishing processes</li>
+                    <li>• Design principles for metal artwork</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-neutral-900 mb-4">Workshop Highlights</h3>
+                <p class="text-neutral-700 mb-6">
+                    Master Craftsman Suresh Sharma brings over 20 years of expertise in traditional metal crafting from Moradabad, the brass city of India. You'll work with authentic tools and techniques to create your own metal masterpieces.
+                </p>
+            </div>
+        </div>
+    </main>
+
     <footer class="bg-white border-t border-gray-100 py-16">
         <div class="max-w-6xl mx-auto px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
@@ -243,8 +214,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- Calendar JavaScript -->
-    <script src="calendar.js"></script>
 </body>
 </html>

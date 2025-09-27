@@ -7,29 +7,21 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeMobileMenu();
     initializeShowMore();
     initializeViewAll();
-    initializeCalendarButton();
+    initializeEventCardNavigation();
 });
 
 /**
- * Initialize navigation tab switching functionality
+ * Initialize navigation functionality
  */
 function initializeNavigation() {
-    const eventsTab = document.getElementById('events-tab');
-    const jobsTab = document.getElementById('jobs-tab');
+    // Navigation is now handled with simple links, no JavaScript needed
     const eventsSection = document.getElementById('events-section');
-    const jobsSection = document.getElementById('jobs-section');
     
-    // Add event listeners for tab switching
-    eventsTab.addEventListener('click', function() {
-        switchToTab('events', eventsTab, jobsTab, eventsSection, jobsSection);
-    });
-    
-    jobsTab.addEventListener('click', function() {
-        switchToTab('jobs', eventsTab, jobsTab, eventsSection, jobsSection);
-    });
-    
-    // Initialize with Events tab active
-    switchToTab('events', eventsTab, jobsTab, eventsSection, jobsSection);
+    // Ensure events section is visible on homepage
+    if (eventsSection) {
+        eventsSection.classList.remove('hidden');
+        eventsSection.classList.add('content-section');
+    }
 }
 
 /**
@@ -533,38 +525,7 @@ function trackEvent(eventName, eventData) {
     console.log('Event tracked:', eventName, eventData);
 }
 
-/**
- * Initialize Calendar button functionality
- */
-function initializeCalendarButton() {
-    const calendarBtn = document.getElementById('calendar-btn');
-    const navCalendarBtn = document.getElementById('nav-calendar-btn');
-    const exploreEventsBtn = document.getElementById('explore-events-btn');
-    
-    if (calendarBtn) {
-        calendarBtn.addEventListener('click', function() {
-            // Navigate to calendar page
-            window.location.href = 'calendar.html';
-        });
-    }
-    
-    if (navCalendarBtn) {
-        navCalendarBtn.addEventListener('click', function() {
-            // Navigate to calendar page
-            window.location.href = 'calendar.html';
-        });
-    }
-    
-    if (exploreEventsBtn) {
-        exploreEventsBtn.addEventListener('click', function() {
-            // Scroll to events section
-            document.getElementById('events-section').scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start' 
-            });
-        });
-    }
-}
+// Removed initializeCalendarButton - navigation now uses simple links
 
 /**
  * Initialize View All functionality for events
@@ -647,13 +608,52 @@ function initializeViewAll() {
     });
 }
 
+/**
+ * Initialize event card navigation functionality
+ */
+function initializeEventCardNavigation() {
+    const eventCards = document.querySelectorAll('.event-card');
+    
+    eventCards.forEach((card, index) => {
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Define event pages mapping
+            const eventPages = {
+                0: 'pottery-workshop.html',        // Pottery Workshop
+                1: 'textile-weaving.html',         // Textile Weaving (to be created)
+                2: 'metal-crafting.html',          // Metal Crafting (to be created)
+                3: 'lamp-making.html',             // Lamp Making (to be created)
+                4: 'block-printing.html',          // Block Printing (to be created)
+                5: 'jewelry-making.html',          // Jewelry Making (to be created)
+                6: 'madhubani-painting.html',      // Madhubani Painting (to be created)
+                7: 'wood-carving.html',            // Wood Carving (to be created)
+                8: 'silk-weaving.html',            // Silk Weaving (to be created)
+                9: 'blue-pottery.html',            // Blue Pottery (to be created)
+                10: 'carpet-weaving.html',         // Carpet Weaving (to be created)
+                11: 'puppet-making.html'           // Puppet Making (to be created)
+            };
+            
+            // Get the data-index from the clicked card
+            const cardIndex = parseInt(card.getAttribute('data-index'));
+            
+            // Navigate to the corresponding page
+            if (eventPages[cardIndex]) {
+                window.location.href = eventPages[cardIndex];
+            } else {
+                // Fallback for cards without dedicated pages yet
+                console.log(`Event page for index ${cardIndex} not yet created`);
+            }
+        });
+    });
+}
+
 // Export functions for potential external use
 window.ArtisanConnect = {
-    switchToTab,
     scrollToTop,
     validateForm,
     UserPreferences,
     trackEvent,
-    initializeCalendarButton,
-    initializeViewAll
+    initializeViewAll,
+    initializeEventCardNavigation
 };
