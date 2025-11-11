@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idea Bank - HandiCraft-Tech</title>
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'terracotta': '#D4856A',
+                        'sage': '#9CAF88',
+                        'cream': '#F5F5DC',
+                        'off-white': '#FAFAFA',
+                        'neutral': {
+                            50: '#FAFAFA',
+                            100: '#F5F5F5',
+                            200: '#E5E5E5',
+                            300: '#D4D4D4',
+                            400: '#A3A3A3',
+                            500: '#737373',
+                            600: '#525252',
+                            700: '#404040',
+                            800: '#262626',
+                            900: '#171717'
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-neutral-50 text-neutral-900 antialiased font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="block">
+                        <h1 class="text-2xl font-bold text-neutral-900 hover:text-terracotta transition-colors duration-200 cursor-pointer">
+                            HandiCraft<span class="text-terracotta">-Tech</span>
+                        </h1>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-neutral-600 hover:text-neutral-900 px-3 py-2 text-sm font-medium transition-colors duration-200">Home</a>
+                        <a href="idea-bank.html" class="text-neutral-900 border-b-2 border-terracotta px-3 py-2 text-sm font-medium">Idea Bank</a>
+                        <a href="#" class="text-neutral-600 hover:text-neutral-900 px-3 py-2 text-sm font-medium transition-colors duration-200">Impact Funding</a>
+                        <a href="#" class="text-neutral-600 hover:text-neutral-900 px-3 py-2 text-sm font-medium transition-colors duration-200">Curated Collection</a>
+                        <a href="calendar.html" class="text-neutral-600 hover:text-neutral-900 px-3 py-2 text-sm font-medium transition-colors duration-200">Calendar</a>
+                        <a href="jobs.html" class="text-neutral-600 hover:text-neutral-900 px-3 py-2 text-sm font-medium transition-colors duration-200">Jobs</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="bg-neutral-50 inline-flex items-center justify-center p-2 rounded-md text-neutral-400 hover:text-neutral-500 hover:bg-neutral-100">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 lg:px-8 pt-20 md:pt-24 pb-16 md:pb-20">
+        <!-- Page Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">Idea Bank</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                A collaborative space for research, design concepts, and innovative projects in traditional handicrafts.
+            </p>
+        </div>
+
+        <!-- Research Reports Section -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold text-neutral-900 mb-6">Research Reports</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Visual Research Card -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-6 hover:border-gray-200 shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Visual Research</h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Explore comprehensive visual research on traditional patterns, motifs, and design elements from various craft traditions.
+                            </p>
+                        </div>
+                        <div class="ml-4">
+                            <svg class="w-8 h-8 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <a href="#" class="block p-3 bg-neutral-50 rounded-lg hover:bg-terracotta/10 transition-colors duration-200 group">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-neutral-900 group-hover:text-terracotta">Traditional Pattern Library</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover:text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="#" class="block p-3 bg-neutral-50 rounded-lg hover:bg-terracotta/10 transition-colors duration-200 group">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-neutral-900 group-hover:text-terracotta">Color Palette Studies</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover:text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="#" class="block p-3 bg-neutral-50 rounded-lg hover:bg-terracotta/10 transition-colors duration-200 group">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-neutral-900 group-hover:text-terracotta">Regional Design Analysis</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover:text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Market Trends Card -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-6 hover:border-gray-200 shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Market Trends</h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Stay updated with the latest market trends, consumer preferences, and industry insights in the handicraft sector.
+                            </p>
+                        </div>
+                        <div class="ml-4">
+                            <svg class="w-8 h-8 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <a href="#" class="block p-3 bg-neutral-50 rounded-lg hover:bg-sage/10 transition-colors duration-200 group">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-neutral-900 group-hover:text-sage">Consumer Behavior Report 2025</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover:text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="#" class="block p-3 bg-neutral-50 rounded-lg hover:bg-sage/10 transition-colors duration-200 group">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-neutral-900 group-hover:text-sage">Global Handicraft Market Analysis</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover:text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="#" class="block p-3 bg-neutral-50 rounded-lg hover:bg-sage/10 transition-colors duration-200 group">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-neutral-900 group-hover:text-sage">E-commerce Trends in Crafts</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover:text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Design Concepts Section -->
+        <section class="mb-16">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl md:text-3xl font-bold text-neutral-900">Design Concepts</h2>
+                <button class="px-4 py-2 bg-terracotta text-white rounded-lg hover:bg-terracotta/90 transition-colors duration-200 text-sm font-medium">
+                    Share Your Concept
+                </button>
+            </div>
+            <div class="bg-white rounded-2xl border border-gray-100 p-8 shadow-md">
+                <p class="text-gray-600 mb-6">
+                    Share and develop new design concepts inspired by traditional handicrafts. Collaborate with designers and artisans to bring innovative ideas to life.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-900 mb-2">Concept Title</label>
+                        <input type="text" placeholder="Enter your concept title" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-terracotta focus:border-transparent outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-900 mb-2">Category</label>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-terracotta focus:border-transparent outline-none">
+                            <option>Select category</option>
+                            <option>Textile Design</option>
+                            <option>Pottery & Ceramics</option>
+                            <option>Metal Craft</option>
+                            <option>Wood Carving</option>
+                            <option>Jewelry</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-neutral-900 mb-2">Description</label>
+                    <textarea rows="4" placeholder="Describe your design concept, inspiration, and how it relates to traditional crafts..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-terracotta focus:border-transparent outline-none"></textarea>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-neutral-900 mb-2">Upload Images</label>
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-terracotta transition-colors duration-200 cursor-pointer">
+                        <svg class="w-12 h-12 text-gray-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                        </svg>
+                        <p class="text-sm text-gray-600">Click to upload or drag and drop</p>
+                        <p class="text-xs text-gray-500 mt-1">PNG, JPG, GIF up to 10MB</p>
+                    </div>
+                </div>
+                <div class="flex justify-end gap-4">
+                    <button class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200 text-sm font-medium">
+                        Save Draft
+                    </button>
+                    <button class="px-6 py-2 bg-terracotta text-white rounded-lg hover:bg-terracotta/90 transition-colors duration-200 text-sm font-medium">
+                        Submit Concept
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section>
+            <h2 class="text-2xl md:text-3xl font-bold text-neutral-900 mb-6">Projects</h2>
+            
+            <!-- Co Creation Section -->
+            <div class="mb-12">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-xl md:text-2xl font-semibold text-neutral-900">Co Creation</h3>
+                    <span class="text-sm text-gray-500">12 active projects</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Project Card 1 -->
+                    <div class="bg-white rounded-2xl border border-gray-100 p-6 hover:border-gray-200 shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="mb-4">
+                            <span class="inline-block px-3 py-1 bg-terracotta/10 text-terracotta rounded-full text-xs font-medium mb-3">Active</span>
+                            <h4 class="text-lg font-semibold text-neutral-900 mb-2">Modern Pottery Collection</h4>
+                            <p class="text-sm text-gray-600 mb-4">Collaborative project to create contemporary pottery designs inspired by traditional Khurja techniques.</p>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <div class="flex items-center text-gray-600">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                </svg>
+                                <span>8 contributors</span>
+                            </div>
+                            <a href="#" class="text-terracotta hover:text-terracotta/80 font-medium">View →</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="bg-white rounded-2xl border border-gray-100 p-6 hover:border-gray-200 shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="mb-4">
+                            <span class="inline-block px-3 py-1 bg-terracotta/10 text-terracotta rounded-full text-xs font-medium mb-3">Active</span>
+                            <h4 class="text-lg font-semibold text-neutral-900 mb-2">Sustainable Textile Patterns</h4>
+                            <p class="text-sm text-gray-600 mb-4">Developing eco-friendly textile patterns that blend traditional motifs with sustainable practices.</p>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <div class="flex items-center text-gray-600">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                </svg>
+                                <span>15 contributors</span>
+                            </div>
+                            <a href="#" class="text-terracotta hover:text-terracotta/80 font-medium">View →</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="bg-white rounded-2xl border border-gray-100 p-6 hover:border-gray-200 shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="mb-4">
+                            <span class="inline-block px-3 py-1 bg-sage/10 text-sage rounded-full text-xs font-medium mb-3">Planning</span>
+                            <h4 class="text-lg font-semibold text-neutral-900 mb-2">Digital Craft Documentation</h4>
+                            <p class="text-sm text-gray-600 mb-4">Creating comprehensive digital archives of traditional craft techniques and processes.</p>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <div class="flex items-center text-gray-600">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                </svg>
+                                <span>5 contributors</span>
+                            </div>
+                            <a href="#" class="text-terracotta hover:text-terracotta/80 font-medium">View →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Open Source Section -->
+            <div>
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-xl md:text-2xl font-semibold text-neutral-900">Open Source</h3>
+                    <span class="text-sm text-gray-500">8 active projects</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Project Card 1 -->
+                    <div class="bg-white rounded-2xl border border-gray-100 p-6 hover:border-gray-200 shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="mb-4">
+                            <span class="inline-block px-3 py-1 bg-sage/10 text-sage rounded-full text-xs font-medium mb-3">Open Source</span>
+                            <h4 class="text-lg font-semibold text-neutral-900 mb-2">Pattern Generator Tool</h4>
+                            <p class="text-sm text-gray-600 mb-4">Open-source tool for generating traditional patterns and motifs for digital use.</p>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <div class="flex items-center text-gray-600">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+                                </svg>
+                                <span>23 contributors</span>
+                            </div>
+                            <a href="#" class="text-sage hover:text-sage/80 font-medium">View →</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="bg-white rounded-2xl border border-gray-100 p-6 hover:border-gray-200 shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="mb-4">
+                            <span class="inline-block px-3 py-1 bg-sage/10 text-sage rounded-full text-xs font-medium mb-3">Open Source</span>
+                            <h4 class="text-lg font-semibold text-neutral-900 mb-2">Craft Database API</h4>
+                            <p class="text-sm text-gray-600 mb-4">Public API providing access to craft information, techniques, and artisan profiles.</p>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <div class="flex items-center text-gray-600">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+                                </svg>
+                                <span>12 contributors</span>
+                            </div>
+                            <a href="#" class="text-sage hover:text-sage/80 font-medium">View →</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="bg-white rounded-2xl border border-gray-100 p-6 hover:border-gray-200 shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="mb-4">
+                            <span class="inline-block px-3 py-1 bg-sage/10 text-sage rounded-full text-xs font-medium mb-3">Open Source</span>
+                            <h4 class="text-lg font-semibold text-neutral-900 mb-2">Design System Library</h4>
+                            <p class="text-sm text-gray-600 mb-4">Component library for building craft-focused applications with traditional design elements.</p>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <div class="flex items-center text-gray-600">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+                                </svg>
+                                <span>18 contributors</span>
+                            </div>
+                            <a href="#" class="text-sage hover:text-sage/80 font-medium">View →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100 py-16">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Logo & Description -->
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4 text-neutral-900">
+                        HandiCraft<span class="text-terracotta">-Tech</span>
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed max-w-md">
+                        Bridging the gap between traditional Indian craftsmanship and modern opportunities. Connect with master artisans and preserve cultural heritage.
+                    </p>
+                    <div class="flex space-x-4">
+                        <!-- Facebook -->
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-terracotta hover:text-white transition-colors duration-200" aria-label="Facebook">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-terracotta hover:text-white transition-colors duration-200" aria-label="Instagram">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987c6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-2.508 0-4.541-2.033-4.541-4.541s2.033-4.541 4.541-4.541s4.541 2.033 4.541 4.541s-2.033 4.541-4.541 4.541zm7.098 0c-2.508 0-4.541-2.033-4.541-4.541s2.033-4.541 4.541-4.541s4.541 2.033 4.541 4.541s-2.033 4.541-4.541 4.541z"/>
+                            </svg>
+                        </a>
+                        <!-- Twitter/X -->
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-terracotta hover:text-white transition-colors duration-200" aria-label="Twitter">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <!-- LinkedIn -->
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-terracotta hover:text-white transition-colors duration-200" aria-label="LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <!-- YouTube -->
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-terracotta hover:text-white transition-colors duration-200" aria-label="YouTube">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-neutral-900">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-600 hover:text-neutral-900 transition-colors duration-200">Home</a></li>
+                        <li><a href="idea-bank.html" class="text-gray-600 hover:text-neutral-900 transition-colors duration-200">Idea Bank</a></li>
+                        <li><a href="calendar.html" class="text-gray-600 hover:text-neutral-900 transition-colors duration-200">Calendar</a></li>
+                        <li><a href="jobs.html" class="text-gray-600 hover:text-neutral-900 transition-colors duration-200">Jobs</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-neutral-900 transition-colors duration-200">About Us</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-neutral-900 transition-colors duration-200">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-neutral-900">Contact</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>📧 hello@handicraft-tech.in</li>
+                        <li>📍 Mumbai, Maharashtra</li>
+                        <li>🕐 Mon-Fri, 9AM-6PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                        © 2025 HandiCraft-Tech. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-500 hover:text-neutral-900 transition-colors duration-200">Privacy Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-neutral-900 transition-colors duration-200">Terms of Service</a>
+                        <a href="#" class="text-gray-500 hover:text-neutral-900 transition-colors duration-200">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+
