@@ -375,18 +375,61 @@ button:focus-visible,
     transition: transform 0.2s ease;
 }
 
-/* Event card image hover zoom effect */
-.event-card img {
+/* Universal card image hover zoom effect - applies to all card types */
+/* Targets images inside any card-like structure with relative overflow-hidden containers */
+.relative.overflow-hidden img,
+div[class*="rounded-2xl"] .relative.overflow-hidden img,
+div[class*="rounded-2xl"] .relative[class*="overflow"] img,
+article[class*="rounded-2xl"] .relative.overflow-hidden img,
+article[class*="rounded-2xl"] .relative[class*="overflow"] img {
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transform-origin: center;
 }
 
-.event-card:hover img {
+/* Apply zoom on parent card hover - works with group class or direct hover */
+.group:hover .relative.overflow-hidden img,
+.group:hover .relative[class*="overflow"] img,
+div[class*="rounded-2xl"]:hover .relative.overflow-hidden img,
+div[class*="rounded-2xl"]:hover .relative[class*="overflow"] img,
+article[class*="rounded-2xl"]:hover .relative.overflow-hidden img,
+article[class*="rounded-2xl"]:hover .relative[class*="overflow"] img,
+div[class*="rounded-2xl"][class*="cursor-pointer"]:hover .relative.overflow-hidden img,
+div[class*="rounded-2xl"][class*="cursor-pointer"]:hover .relative[class*="overflow"] img {
+    transform: scale(1.1);
+}
+
+/* Specific card class support */
+.event-card img,
+.product-card img,
+.shop-card img,
+.project-card img,
+.story-card img,
+.internship-card img,
+.scheme-card img,
+.craft-card img,
+.funding-card img,
+.research-card img,
+.cluster-card img {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center;
+}
+
+.event-card:hover img,
+.product-card:hover img,
+.shop-card:hover img,
+.project-card:hover img,
+.story-card:hover img,
+.internship-card:hover img,
+.scheme-card:hover img,
+.craft-card:hover img,
+.funding-card:hover img,
+.research-card:hover img,
+.cluster-card:hover img {
     transform: scale(1.1);
 }
 
 /* Ensure image container doesn't overflow */
-.event-card .relative {
+.relative.overflow-hidden {
     overflow: hidden;
 }
 
