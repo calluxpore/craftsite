@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeAnimations();
     initializeMobileMenu();
     initializeShowMore();
+    initializeShowMoreProducts();
     initializeViewAll();
     initializeEventCardNavigation();
 });
@@ -72,6 +73,98 @@ function showSection(section) {
  */
 function hideSection(section) {
     section.classList.add('hidden');
+}
+
+/**
+ * Initialize Show More functionality for products
+ */
+function initializeShowMoreProducts() {
+    const showMoreBtn = document.getElementById('show-more-products-btn');
+    const showMoreText = document.getElementById('show-more-products-text');
+    const showMoreIcon = document.getElementById('show-more-products-icon');
+    const productItems = document.querySelectorAll('.product-item');
+    
+    // Exit if button doesn't exist
+    if (!showMoreBtn || !showMoreText || !showMoreIcon || productItems.length === 0) {
+        return;
+    }
+    
+    let currentlyShowing = 4; // Initially showing first 4 products
+    let isExpanded = false;
+    
+    // Show only first 4 products initially
+    productItems.forEach((item, index) => {
+        if (index < 4) {
+            item.classList.remove('hidden');
+        } else {
+            item.classList.add('hidden');
+        }
+    });
+    
+    showMoreBtn.addEventListener('click', function() {
+        if (!isExpanded) {
+            // Show more products in batches of 4
+            const nextBatch = Math.min(currentlyShowing + 4, productItems.length);
+            
+            // Animate new cards in
+            for (let i = currentlyShowing; i < nextBatch; i++) {
+                const productItem = productItems[i];
+                productItem.classList.remove('hidden');
+                
+                // Add animation delay for staggered effect
+                setTimeout(() => {
+                    productItem.style.opacity = '0';
+                    productItem.style.transform = 'translateY(20px)';
+                    productItem.style.transition = 'all 0.4s ease';
+                    
+                    // Trigger animation
+                    requestAnimationFrame(() => {
+                        productItem.style.opacity = '1';
+                        productItem.style.transform = 'translateY(0)';
+                    });
+                }, (i - currentlyShowing) * 100);
+            }
+            
+            currentlyShowing = nextBatch;
+            
+            // Update button text and state
+            if (currentlyShowing >= productItems.length) {
+                showMoreText.textContent = 'Show Less';
+                showMoreIcon.style.transform = 'rotate(180deg)';
+                isExpanded = true;
+            } else {
+                showMoreText.textContent = 'Show More';
+            }
+            
+        } else {
+            // Show less - collapse back to first 4
+            productItems.forEach((item, index) => {
+                if (index >= 4) {
+                    item.style.transition = 'all 0.3s ease';
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(-20px)';
+                    
+                    setTimeout(() => {
+                        item.classList.add('hidden');
+                        item.style.opacity = '';
+                        item.style.transform = '';
+                        item.style.transition = '';
+                    }, 300);
+                }
+            });
+            
+            currentlyShowing = 4;
+            isExpanded = false;
+            showMoreText.textContent = 'Show More';
+            showMoreIcon.style.transform = 'rotate(0deg)';
+            
+            // Smooth scroll to products section
+            document.getElementById('products-section').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+    });
 }
 
 /**
@@ -465,80 +558,155 @@ function trackEvent(eventName, eventData) {
  */
 function initializeViewAll() {
     const viewAllBtn = document.getElementById('view-all-events-btn');
+    const viewAllProductsBtn = document.getElementById('view-all-products-btn');
     
-    if (!viewAllBtn) return;
-    
-    viewAllBtn.addEventListener('click', function() {
-        const eventItems = document.querySelectorAll('.event-item');
-        let allVisible = true;
-        
-        // Check if all events are currently visible
-        eventItems.forEach(item => {
-            if (item.classList.contains('hidden')) {
-                allVisible = false;
+    if (viewAllBtn) {
+        viewAllBtn.addEventListener('click', function() {
+            const eventItems = document.querySelectorAll('.event-item');
+            let allVisible = true;
+            
+            // Check if all events are currently visible
+            eventItems.forEach(item => {
+                if (item.classList.contains('hidden')) {
+                    allVisible = false;
+                }
+            });
+            
+            if (!allVisible) {
+                // Show all events with staggered animation
+                eventItems.forEach((item, index) => {
+                    if (item.classList.contains('hidden')) {
+                        item.classList.remove('hidden');
+                        
+                        // Add staggered animation
+                        setTimeout(() => {
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(20px)';
+                            item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                            
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateY(0)';
+                            }, 50);
+                        }, index * 80); // Staggered timing
+                    }
+                });
+                
+                // Update button text
+                viewAllBtn.textContent = 'Show Less ↑';
+                
+                // Update show more button if it exists
+                const showMoreBtn = document.getElementById('show-more-btn');
+                const showMoreText = document.getElementById('show-more-text');
+                const showMoreIcon = document.getElementById('show-more-icon');
+                
+                if (showMoreBtn && showMoreText && showMoreIcon) {
+                    showMoreText.textContent = 'Show Less';
+                    showMoreIcon.style.transform = 'rotate(180deg)';
+                }
+            } else {
+                // Hide events beyond first 4 with instant clean transition
+                eventItems.forEach((item, index) => {
+                    if (index >= 4) {
+                        item.classList.add('hidden');
+                    }
+                });
+                
+                // Update button text
+                viewAllBtn.textContent = 'View All →';
+                
+                // Update show more button if it exists
+                const showMoreBtn = document.getElementById('show-more-btn');
+                const showMoreText = document.getElementById('show-more-text');
+                const showMoreIcon = document.getElementById('show-more-icon');
+                
+                if (showMoreBtn && showMoreText && showMoreIcon) {
+                    showMoreText.textContent = 'Show More';
+                    showMoreIcon.style.transform = 'rotate(0deg)';
+                }
+                
+                // Smooth scroll to events section
+                document.getElementById('events-section').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start' 
+                });
             }
         });
-        
-        if (!allVisible) {
-            // Show all events with staggered animation
-            eventItems.forEach((item, index) => {
+    }
+    
+    if (viewAllProductsBtn) {
+        viewAllProductsBtn.addEventListener('click', function() {
+            const productItems = document.querySelectorAll('.product-item');
+            let allVisible = true;
+            
+            // Check if all products are currently visible
+            productItems.forEach(item => {
                 if (item.classList.contains('hidden')) {
-                    item.classList.remove('hidden');
-                    
-                    // Add staggered animation
-                    setTimeout(() => {
-                        item.style.opacity = '0';
-                        item.style.transform = 'translateY(20px)';
-                        item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                    allVisible = false;
+                }
+            });
+            
+            if (!allVisible) {
+                // Show all products with staggered animation
+                productItems.forEach((item, index) => {
+                    if (item.classList.contains('hidden')) {
+                        item.classList.remove('hidden');
                         
+                        // Add staggered animation
                         setTimeout(() => {
-                            item.style.opacity = '1';
-                            item.style.transform = 'translateY(0)';
-                        }, 50);
-                    }, index * 80); // Staggered timing
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(20px)';
+                            item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                            
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateY(0)';
+                            }, 50);
+                        }, index * 80); // Staggered timing
+                    }
+                });
+                
+                // Update button text
+                viewAllProductsBtn.textContent = 'Show Less ↑';
+                
+                // Update show more button if it exists
+                const showMoreProductsBtn = document.getElementById('show-more-products-btn');
+                const showMoreProductsText = document.getElementById('show-more-products-text');
+                const showMoreProductsIcon = document.getElementById('show-more-products-icon');
+                
+                if (showMoreProductsBtn && showMoreProductsText && showMoreProductsIcon) {
+                    showMoreProductsText.textContent = 'Show Less';
+                    showMoreProductsIcon.style.transform = 'rotate(180deg)';
                 }
-            });
-            
-            // Update button text
-            viewAllBtn.textContent = 'Show Less ↑';
-            
-            // Update show more button if it exists
-            const showMoreBtn = document.getElementById('show-more-btn');
-            const showMoreText = document.getElementById('show-more-text');
-            const showMoreIcon = document.getElementById('show-more-icon');
-            
-            if (showMoreBtn && showMoreText && showMoreIcon) {
-                showMoreText.textContent = 'Show Less';
-                showMoreIcon.style.transform = 'rotate(180deg)';
-            }
-        } else {
-            // Hide events beyond first 4 with instant clean transition
-            eventItems.forEach((item, index) => {
-                if (index >= 4) {
-                    item.classList.add('hidden');
+            } else {
+                // Hide products beyond first 4 with instant clean transition
+                productItems.forEach((item, index) => {
+                    if (index >= 4) {
+                        item.classList.add('hidden');
+                    }
+                });
+                
+                // Update button text
+                viewAllProductsBtn.textContent = 'View All →';
+                
+                // Update show more button if it exists
+                const showMoreProductsBtn = document.getElementById('show-more-products-btn');
+                const showMoreProductsText = document.getElementById('show-more-products-text');
+                const showMoreProductsIcon = document.getElementById('show-more-products-icon');
+                
+                if (showMoreProductsBtn && showMoreProductsText && showMoreProductsIcon) {
+                    showMoreProductsText.textContent = 'Show More';
+                    showMoreProductsIcon.style.transform = 'rotate(0deg)';
                 }
-            });
-            
-            // Update button text
-            viewAllBtn.textContent = 'View All →';
-            
-            // Update show more button if it exists
-            const showMoreBtn = document.getElementById('show-more-btn');
-            const showMoreText = document.getElementById('show-more-text');
-            const showMoreIcon = document.getElementById('show-more-icon');
-            
-            if (showMoreBtn && showMoreText && showMoreIcon) {
-                showMoreText.textContent = 'Show More';
-                showMoreIcon.style.transform = 'rotate(0deg)';
+                
+                // Smooth scroll to products section
+                document.getElementById('products-section').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start' 
+                });
             }
-            
-            // Smooth scroll to events section
-            document.getElementById('events-section').scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start' 
-            });
-        }
-    });
+        });
+    }
 }
 
 /**

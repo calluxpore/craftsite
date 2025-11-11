@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HandiCraft-Tech - Discover the Art of India</title>
+    <title>HandiCraft-tech - Discover the Art of India</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -456,6 +456,316 @@
                 </button>
             </div>
         </section>
+
+        <!-- New Product Releases Section -->
+        <section id="products-section" class="content-section mt-20">
+            <div class="flex items-center justify-between mb-12">
+                <h3 class="text-2xl md:text-3xl font-bold text-neutral-900">New Product Releases</h3>
+                <button id="view-all-products-btn" class="text-sm text-gray-500 hover:text-neutral-900 transition-colors duration-200 font-medium">View All →</button>
+            </div>
+            
+            <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Product Card 1: Silver Jewelry -->
+                <div class="product-card product-item group cursor-pointer bg-white rounded-2xl border border-gray-100 p-4 hover:border-gray-200 shadow-md hover:shadow-lg transition-all duration-300" data-index="0">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <div class="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                            <svg class="w-32 h-32 text-gray-400 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                            </svg>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Silver Jewelry</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="font-medium">₹8,500 - ₹15,000</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>In Stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2: Wooden Desk for Corporate Office -->
+                <div class="product-card product-item group cursor-pointer bg-white rounded-2xl border border-gray-100 p-4 hover:border-gray-200 shadow-md hover:shadow-lg transition-all duration-300" data-index="1">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <div class="w-full h-full bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center">
+                            <svg class="w-32 h-32 text-amber-400 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Wooden Desk for Corporate Office</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="font-medium">₹25,000 - ₹45,000</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>In Stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3: Suits & Sets -->
+                <div class="product-card product-item group cursor-pointer bg-white rounded-2xl border border-gray-100 p-4 hover:border-gray-200 shadow-md hover:shadow-lg transition-all duration-300" data-index="2">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <div class="w-full h-full bg-gradient-to-br from-pink-100 to-purple-100 flex items-center justify-center">
+                            <svg class="w-32 h-32 text-pink-400 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                            </svg>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Suits & Sets</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="font-medium">₹3,500 - ₹8,000</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>In Stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4: Colorful Cotton Carpets for Kids Room -->
+                <div class="product-card product-item group cursor-pointer bg-white rounded-2xl border border-gray-100 p-4 hover:border-gray-200 shadow-md hover:shadow-lg transition-all duration-300" data-index="3">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <div class="w-full h-full bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center">
+                            <svg class="w-32 h-32 text-blue-400 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Colorful Cotton Carpets for Kids Room</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="font-medium">₹2,000 - ₹5,000</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>In Stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 5: Minimalist Ceramic Planters -->
+                <div class="product-card product-item group cursor-pointer hidden bg-white rounded-2xl border border-gray-100 p-4 hover:border-gray-200 shadow-md hover:shadow-lg transition-all duration-300" data-index="4">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <div class="w-full h-full bg-gradient-to-br from-green-50 to-emerald-100 flex items-center justify-center">
+                            <svg class="w-32 h-32 text-green-400 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                            </svg>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Minimalist Ceramic Planters</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="font-medium">₹1,200 - ₹3,500</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>In Stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 6: Handwoven Laptop Sleeves -->
+                <div class="product-card product-item group cursor-pointer hidden bg-white rounded-2xl border border-gray-100 p-4 hover:border-gray-200 shadow-md hover:shadow-lg transition-all duration-300" data-index="5">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <div class="w-full h-full bg-gradient-to-br from-indigo-50 to-purple-100 flex items-center justify-center">
+                            <svg class="w-32 h-32 text-indigo-400 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Handwoven Laptop Sleeves</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="font-medium">₹1,800 - ₹4,500</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>In Stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 7: Sustainable Bamboo Kitchenware Set -->
+                <div class="product-card product-item group cursor-pointer hidden bg-white rounded-2xl border border-gray-100 p-4 hover:border-gray-200 shadow-md hover:shadow-lg transition-all duration-300" data-index="6">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <div class="w-full h-full bg-gradient-to-br from-teal-50 to-cyan-100 flex items-center justify-center">
+                            <svg class="w-32 h-32 text-teal-400 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                            </svg>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Sustainable Bamboo Kitchenware Set</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="font-medium">₹2,500 - ₹6,000</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>In Stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 8: Artisan-Made Yoga Mats -->
+                <div class="product-card product-item group cursor-pointer hidden bg-white rounded-2xl border border-gray-100 p-4 hover:border-gray-200 shadow-md hover:shadow-lg transition-all duration-300" data-index="7">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <div class="w-full h-full bg-gradient-to-br from-sage-50 to-green-100 flex items-center justify-center">
+                            <svg class="w-32 h-32 text-sage-500 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+                            </svg>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Artisan-Made Yoga Mats</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="font-medium">₹3,000 - ₹7,500</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>In Stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 9: Handcrafted Leather Wallets -->
+                <div class="product-card product-item group cursor-pointer hidden bg-white rounded-2xl border border-gray-100 p-4 hover:border-gray-200 shadow-md hover:shadow-lg transition-all duration-300" data-index="8">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <div class="w-full h-full bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center">
+                            <svg class="w-32 h-32 text-amber-600 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Handcrafted Leather Wallets</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="font-medium">₹1,500 - ₹4,000</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>In Stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 10: Macrame Wall Hangings -->
+                <div class="product-card product-item group cursor-pointer hidden bg-white rounded-2xl border border-gray-100 p-4 hover:border-gray-200 shadow-md hover:shadow-lg transition-all duration-300" data-index="9">
+                    <div class="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                        <div class="w-full h-full bg-gradient-to-br from-rose-50 to-pink-100 flex items-center justify-center">
+                            <svg class="w-32 h-32 text-rose-400 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-semibold text-neutral-900 group-hover:text-terracotta transition-colors duration-200">Macrame Wall Hangings</h4>
+                        <div class="space-y-1">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="font-medium">₹2,200 - ₹5,500</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>In Stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Show More Button -->
+            <div class="text-center mt-8">
+                <button id="show-more-products-btn" class="inline-flex items-center text-sm text-gray-600 hover:text-neutral-900 transition-colors duration-200 group">
+                    <span id="show-more-products-text">Show More</span>
+                    <svg id="show-more-products-icon" class="w-4 h-4 ml-1 transition-transform duration-200 group-hover:translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -465,7 +775,7 @@
                 <!-- Logo & Description -->
                 <div class="md:col-span-2">
                     <h3 class="text-2xl font-bold mb-4 text-neutral-900">
-                        HandiCraft<span class="text-terracotta">-Tech</span>
+                        HandiCraft<span class="text-terracotta">-tech</span>
                     </h3>
                     <p class="text-gray-600 mb-6 leading-relaxed max-w-md">
                         Bridging the gap between traditional Indian craftsmanship and modern opportunities. Connect with master artisans and preserve cultural heritage.
@@ -533,7 +843,7 @@
             <div class="border-t border-gray-200 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <p class="text-gray-500 text-sm mb-4 md:mb-0">
-                        © 2025 HandiCraft-Tech. All rights reserved.
+                        © 2025 HandiCraft-tech. All rights reserved.
                     </p>
                     <div class="flex space-x-6 text-sm">
                         <a href="#" class="text-gray-500 hover:text-neutral-900 transition-colors duration-200">Privacy Policy</a>
